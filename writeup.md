@@ -976,7 +976,7 @@ video_clip = clip.fl_image(process_image)
 the code cell out put is the video.
 And here is also a link:
 [link to my video result](./output_images/project_video.mp4)
-
+####
 
 ```python
 from IPython.display import HTML
@@ -994,6 +994,18 @@ HTML("""
     <IPython.core.display.HTML object>
 
 
+###Discussion
+
+####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+problems / issues :
+   At first I can not make the bird view image lines become parallel.after change the src and dst to get the rules,It becomes easy.
+   For fliter the color and mag ,fisrt ,there are some big horizontal line in the image, and I change the gradient thresh and color thresh to reduce the lines.
+r
+fail:
+  if there is shadow in font of the road,It is hard to find the line,and in some statution ,the line is dotted lines,and it is easy to disappear in the bird view image,So It is hard to find the fit.
+  for the shadow station ,a good parameters with gradient and color thresh will solve the problem
+  and for the dotted lines,Use the last frame fit to find current frame fit will work.
+  
 
 
 ```python
@@ -1089,7 +1101,7 @@ video_clip = clip.fl_image(process_image)
          56 
 
 
-    <decorator-gen-171> in write_videofile(self, filename, fps, codec, bitrate, audio, audio_fps, preset, audio_nbytes, audio_codec, audio_bitrate, audio_bufsize, temp_audiofile, rewrite_audio, remove_temp, write_logfile, verbose, threads, ffmpeg_params)
+    <decorator-gen-171> in write_videofile(self, filename, fps, codec, bitrate, audio, audio_fps, preset, audio_nbytes, audio_codec, audio_bitrate, audio_bufsize, temp_audiofppile, rewrite_audio, remove_temp, write_logfile, verbose, threads, ffmpeg_params)
 
 
     /home/shenmutong/.pyenv/versions/anaconda3-4.2.0/lib/python3.5/moviepy/decorators.py in use_clip_fps_by_default(f, clip, *a, **k)
